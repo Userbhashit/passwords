@@ -1,0 +1,6 @@
+.DS_Store
+build/
+.AppleDouble
+.LSOverride
+CMakeFiles/
+CMakeCache.txt

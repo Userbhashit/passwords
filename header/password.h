@@ -12,7 +12,7 @@
  * Reads password from terminal (no echo).
  * Returns newly allocated buffer (must be freed by caller).
  */
-char* password_read(void);
+char* read_password(void);
 
 // Securely wipes memory of password or hash to prevent forensic recovery.
 void password_secure_erase(void* buffer, size_t len);

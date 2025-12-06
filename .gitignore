@@ -4,3 +4,5 @@ build/
 .LSOverride
 CMakeFiles/
 CMakeCache.txt
+.cache/clangd/index
+compile_commands.json

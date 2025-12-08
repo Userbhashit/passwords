@@ -8,20 +8,12 @@
 #define PASSWORD_SALT_LEN 16
 #define PASSWORD_HASH_LEN 64
 
-/**
- * Reads password from terminal (no echo).
- * Returns newly allocated buffer (must be freed by caller).
- */
+// Returns password into newly allocated buffer (must be freed by caller).
 char* read_password(void);
-
 // Securely wipes memory of password or hash to prevent forensic recovery.
 void password_secure_erase(void* buffer, size_t len);
 
-/**
- * Generates a cryptographically secure random salt.
- * Salt buffer must be at least PASSWORD_SALT_LEN bytes.
- */
-bool password_generate_salt(unsigned char* salt);
+int generate_salt(unsigned char* salt);
 
 /**
  * Hashes a password with the given salt using SHA256 (for example).

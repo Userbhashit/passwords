@@ -5,18 +5,15 @@
 #include <termios.h>
 
 #include "password.h"
+
 int main(void) {
   char* pass = read_password();
-  //
-  // if (!verifyPassword(pass)) {
-  //   fprintf(stderr, "Password did not match.");
-  // }
+  password_secure_erase(pass, strlen(pass));
 
-  printf("Passwords are important: %s.\n", pass);
+  unsigned char salt[PASSWORD_SALT_LEN];
+  generate_salt(salt); 
+
   free(pass);
-
-  
-  printf("Passwords are important.\n");
 
   return 0;
 }
